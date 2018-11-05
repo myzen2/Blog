@@ -1,25 +1,22 @@
 <header>
-  <nav class="">
-    <div class="mynavbar" id="navbar">
-      <%= link_to "Mon Blog", root_path, :class=>"" %>
 
-      <%= link_to "Nouvel article", new_post_path, :class=>"" %>
+    <div class="topnav">
+        <%= link_to "Mon Blog", root_path, :class=>"" %>
+        <%= link_to "Nouvel article", new_post_path, :class=>"" %>
 
-      <% if user_signed_in? %>
-      <%= link_to "Tous les articles", posts_path, :class=>"" %>
-      <div class="right">
-        <% if current_user.avatar.attached? %>
-          <%= image_tag current_user.avatar.variant(resize: "100x100") %>
-          <%else%>
-        <% end %>
-        <%= link_to current_user.email, user_path(current_user), :class=>"" %>
-        <%= link_to 'Se Déconnecter', destroy_user_session_path, method: :delete, :class=>"" %>
-      <% else %>
-        <%= link_to "Se connecter", new_user_session_path, :class=>"" %>
-        <%= link_to "S'inscrire", new_user_registration_path, :class=>"" %>
-      </div>
-      <% end %>
-
+        <div class="topnav-right">
+          <% if user_signed_in? %>
+            <%= link_to "Tous les articles", posts_path, :class=>"" %>
+            <% if current_user.avatar.attached? %>
+              <%= image_tag current_user.avatar.variant(resize: "100x100") %>
+            <%else%>
+            <% end %>
+            <%= link_to current_user.email, user_path(current_user), :class=>"" %>
+            <%= link_to 'Se Déconnecter', destroy_user_session_path, method: :delete, :class=>"" %>
+            <% else %>
+            <%= link_to "Se connecter", new_user_session_path, :class=>"" %>
+            <%= link_to "S'inscrire", new_user_registration_path, :class=>"" %>
+        </div>
+          <% end %>
     </div>
-  </nav>
 </header>

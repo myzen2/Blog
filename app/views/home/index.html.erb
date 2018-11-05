@@ -1,126 +1,141 @@
 <h1>Hello World</h1>
 
-<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
-  <div id="pageintro" class="hoc clear">
-    <!-- ################################################################################################ -->
-    <div class="flexslider basicslider">
-      <ul class="slides">
-        <li>
-          <article>
-            <p>Nec imperdiet luctus</p>
-            <h3 class="heading">Odio nunc lobortis nibh ornare velit metus tortor.</h3>
-            <footer>
-              <ul class="nospace inline pushright">
-                <li><a class="btn" href="#">Vitae suspendisse</a></li>
-                <li><a class="btn inverse" href="#">Molestie semper</a></li>
-              </ul>
-            </footer>
-          </article>
-        </li>
-        <li>
-          <article>
-            <p>Quam risus blandit</p>
-            <h3 class="heading">felis quisque consequat porttitor elementum.</h3>
-            <footer>
-              <ul class="nospace inline pushright">
-                <li><a class="btn" href="#">Tincidunt orci</a></li>
-                <li><a class="btn inverse" href="#">Euismod a nunc</a></li>
-              </ul>
-            </footer>
-          </article>
-        </li>
-        <li>
-          <article>
-            <p>Ante vulputate maximus</p>
-            <h3 class="heading">Aliquam rutrum varius justo et pretium ex vestibulum.</h3>
-            <footer>
-              <ul class="nospace inline pushright">
-                <li><a class="btn" href="#">Magna consectetur</a></li>
-                <li><a class="btn inverse" href="#">Semper hendrerit</a></li>
-              </ul>
-            </footer>
-          </article>
-        </li>
-      </ul>
-    </div>
-    <!-- ################################################################################################ -->
-  </div>
+<div class= "bgded overlay">
+  <%= image_tag("backgrounds/01.png")  %>
+</div>
+<!-- :class=>"bgded overlay" -->
+<!--div id="pageintro" class="hoc clear">
+<!-- ################################################################################################ -->
+<!--div class="flexslider basicslider">
+<ul class="slides">
+<li>
+<article>
+<p>Nec imperdiet luctus</p>
+<h3 class="heading">Odio nunc lobortis nibh ornare velit metus tortor.</h3>
+<footer>
+<ul class="nospace inline pushright">
+<li><a class="btn" href="#">Vitae suspendisse</a></li>
+<li><a class="btn inverse" href="#">Molestie semper</a></li>
+</ul>
+</footer>
+</article>
+</li>
+<li>
+<article>
+<p>Quam risus blandit</p>
+<h3 class="heading">felis quisque consequat porttitor elementum.</h3>
+<footer>
+<ul class="nospace inline pushright">
+<li><a class="btn" href="#">Tincidunt orci</a></li>
+<li><a class="btn inverse" href="#">Euismod a nunc</a></li>
+</ul>
+</footer>
+</article>
+</li>
+<li>
+<article>
+<p>Ante vulputate maximus</p>
+<h3 class="heading">Aliquam rutrum varius justo et pretium ex vestibulum.</h3>
+<footer>
+<ul class="nospace inline pushright">
+<li><a class="btn" href="#">Magna consectetur</a></li>
+<li><a class="btn inverse" href="#">Semper hendrerit</a></li>
+</ul>
+</footer>
+</article>
+</li>
+</ul>
+</div>
+<!-- ################################################################################################ -->
+<!--/div>
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
-  <main class="hoc container clear">
-    <!-- main body -->
-    <!-- ################################################################################################ -->
-    <ul class="nospace group services">
-      <li class="one_third first">
-        <article>
-          <h6 class="heading font-x3">Nibh justo vivamus pulvinar</h6>
-          <p>Non nisi vehicula at interdum et malesuada fames ac ante ipsum primis in faucibus integer in arcu faucibus eleifend [&hellip;]</p>
-          <footer><a class="btn" href="#">Purus velit</a></footer>
-        </article>
-      </li>
+<!--div class="wrapper row3">
+<main class="hoc container clear">
+<!-- main body -->
+<!-- ################################################################################################ -->
+<!--ul class="nospace group services">
+<li class="one_third first">
+<article>
+<h6 class="heading font-x3">Nibh justo vivamus pulvinar</h6>
+<p>Non nisi vehicula at interdum et malesuada fames ac ante ipsum primis in faucibus integer in arcu faucibus eleifend [&hellip;]</p>
+<footer><a class="btn" href="#">Purus velit</a></footer>
+</article>
+</li>
+</ul>
 
+<main>
+</div-->
+<div class="black">
+  <div class="third">
       <% @posts.each do |post| %>
-      <li class="one_third">
-        <article class="bgded overlay">
-          <div class="txtwrap"><i class="block fa fa-4x fa-ioxhost"></i>
-            <h6 class="heading">
-              <%= post.title %><br>
-            </h6>
-            <p>
-              <%= post.content %><br>
-              </p>
-              <%= post.user_id %><br>
-              <%= post.created_at %><br>
-            <footer><%= link_to "More &raquo", post_path(post) %></footer>
-          </div>
-        </article>
-      </li>
-      <!--li class="one_third">
-        <article class="bgded overlay" style="background-image:url('images/demo/320x340.png');">
-          <div class="txtwrap active"><i class="block fa fa-4x fa-joomla"></i>
-            <h6 class="heading">Faucibus</h6>
-            <p>Vitae iaculis id leo nec nulla laoreet feugiat cras enim metus ut id felis duis [&hellip;]</p>
-            <footer><a href="#">More &raquo;</a></footer>
-          </div>
-        </article>
-      </li>
-      <li class="one_third first">
-        <article class="bgded overlay" style="background-image:url('images/demo/320x340.png');">
-          <div class="txtwrap"><i class="block fa fa-4x fa-jsfiddle"></i>
-            <h6 class="heading">Venenatis</h6>
-            <p>Pharetra sed felis vivamus in nulla varius mauris vitae semper justo [&hellip;]</p>
-            <footer><a href="#">More &raquo;</a></footer>
-          </div>
-        </article>
-      </li>
-      <li class="one_third">
-        <article class="bgded overlay" style="background-image:url('images/demo/320x340.png');">
-          <div class="txtwrap"><i class="block fa fa-4x fa-language"></i>
-            <h6 class="heading">Sollicitudin</h6>
-            <p>Elementum interdum odio morbi quam turpis tincidunt in ipsum commodo [&hellip;]</p>
-            <footer><a href="#">More &raquo;</a></footer>
-          </div>
-        </article>
-      </li>
-      <li class="one_third">
-        <article class="bgded overlay" style="background-image:url('images/demo/320x340.png');">
-          <div class="txtwrap"><i class="block fa fa-4x fa-lastfm"></i>
-            <h6 class="heading">Vestibulum</h6>
-            <p>Scelerisque odio praesent a purus vel nulla semper interdum ut eget [&hellip;]</p>
-            <footer><a href="#">More &raquo;</a></footer>
-          </div>
-        </article>
-      </li-->
-    </ul>
-    <% end %>
-    <!-- ################################################################################################ -->
-    <!-- / main body -->
-    <div class="clear"></div>
-  </main>
+      <div class="third_first">
+      <%= post.title %>
+      <%= post.content %>
+      <%= post.user_id %>
+      <%= post.created_at %><br>
+      <footer><%= link_to "More &raquo", post_path(post) %></footer>
+
+    </div>
+
+  </div>
+  <% end %>
+
 </div>
+<br>
+<p class="heading">
+
+  </p>
+
+<p class="">
+</p>
+<p>
+</p>
+</div>
+
+<!--li class="one_third">
+<article class="bgded overlay">
+<div class="txtwrap active"><i class="block fa fa-4x fa-joomla"></i>
+<h6 class="heading">Faucibus</h6>
+<p>Vitae iaculis id leo nec nulla laoreet feugiat cras enim metus ut id felis duis [&hellip;]</p>
+<footer><a href="#">More &raquo;</a></footer>
+</div>
+</article>
+</li>
+<li class="one_third first">
+<article class="bgded overlay" style="background-image:url('images/demo/320x340.png');">
+<div class="txtwrap"><i class="block fa fa-4x fa-jsfiddle"></i>
+<h6 class="heading">Venenatis</h6>
+<p>Pharetra sed felis vivamus in nulla varius mauris vitae semper justo [&hellip;]</p>
+<footer><a href="#">More &raquo;</a></footer>
+</div>
+</article>
+</li>
+<li class="one_third">
+<article class="bgded overlay" style="background-image:url('images/demo/320x340.png');">
+<div class="txtwrap"><i class="block fa fa-4x fa-language"></i>
+<h6 class="heading">Sollicitudin</h6>
+<p>Elementum interdum odio morbi quam turpis tincidunt in ipsum commodo [&hellip;]</p>
+<footer><a href="#">More &raquo;</a></footer>
+</div>
+</article>
+</li>
+<li class="one_third">
+<article class="bgded overlay" style="background-image:url('images/demo/320x340.png');">
+<div class="txtwrap"><i class="block fa fa-4x fa-lastfm"></i>
+<h6 class="heading">Vestibulum</h6>
+<p>Scelerisque odio praesent a purus vel nulla semper interdum ut eget [&hellip;]</p>
+<footer><a href="#">More &raquo;</a></footer>
+</div>
+</article>
+</li>
+</ul>
+<!-- ################################################################################################ -->
+<!-- / main body -->
+<div class="clear"></div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -316,7 +331,7 @@
       <ul class="nospace btmspace-30 linklist contact">
         <li><i class="fa fa-map-marker"></i>
           <address>
-          Street Name &amp; Number, Town, Postcode/Zip
+            Street Name &amp; Number, Town, Postcode/Zip
           </address>
         </li>
         <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>

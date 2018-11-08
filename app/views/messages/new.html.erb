@@ -1,0 +1,29 @@
+<%= form_with '/message' do |f| %>
+
+  <h2>Have a question, request, or an issue? Contact us!</h2>
+
+
+  <p>
+
+    <%= f.text_area :message %>
+
+  </p>
+
+
+  <p>
+
+    <%= f.submit %>
+
+  </p>
+
+<% end %>
+
+<%= form_for @page do |form| %>
+  <%= form.cktext_area :notes, class: 'someclass', ckeditor: { language: 'uk'} %>
+  <%= form.cktext_area :content, value: 'Default value', id: 'sometext'%>
+  <%= cktext_area :page, :info, cols: 40, ckeditor: { uiColor: '#AADC6E', toolbar: 'mini' }%>
+<%end %>
+It also works with bootstrap-form
+
+<%= bootstrap_form_for resource do |form|%>
+  <%= form.cktext_area :text, ckeditor: { language: 'uk'}%>

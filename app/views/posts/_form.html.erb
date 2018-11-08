@@ -11,20 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="input-field">
     <%= form.label :title %>
     <%= form.text_field :title, id: :post_title %>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
+  <div class="input-field">
+    <%= form.label :content, "Contenu" %>
     <%= form.text_area :content, id: :post_content %>
   </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+  <div class="file-field input-field">
+    <div class="btn">
+      <span>Parcourir</span>
+      <%= form.file_field :image %>
+    </div>
+
   </div>
+  <br>
 
   <div class="actions">
     <%= form.submit %>

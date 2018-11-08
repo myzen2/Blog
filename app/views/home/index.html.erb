@@ -1,21 +1,23 @@
 <h1>Hello World</h1>
 
-<div class= "bgded overlay">
-  <%= image_tag("backgrounds/01.png")  %>
-</div>
-<!-- :class=>"bgded overlay" -->
-<!--div id="pageintro" class="hoc clear">
-<!-- ################################################################################################ -->
-<!--div class="flexslider basicslider">
-<ul class="slides">
-<li>
-<article>
-<p>Nec imperdiet luctus</p>
-<h3 class="heading">Odio nunc lobortis nibh ornare velit metus tortor.</h3>
-<footer>
-<ul class="nospace inline pushright">
-<li><a class="btn" href="#">Vitae suspendisse</a></li>
-<li><a class="btn inverse" href="#">Molestie semper</a></li>
+  <div class= "bgded overlay">
+    <%= image_tag("backgrounds/01.png")  %>
+  </div>
+  <div class="photo">
+  </div>
+  <!-- :class=>"bgded overlay" -->
+  <!--div id="pageintro" class="hoc clear">
+  <!-- ################################################################################################ -->
+  <!--div class="flexslider basicslider">
+  <ul class="slides">
+  <li>
+  <article>
+  <p>Nec imperdiet luctus</p>
+  <h3 class="heading">Odio nunc lobortis nibh ornare velit metus tortor.</h3>
+  <footer>
+  <ul class="nospace inline pushright">
+  <li><a class="btn" href="#">Vitae suspendisse</a></li>
+  <li><a class="btn inverse" href="#">Molestie semper</a></li>
 </ul>
 </footer>
 </article>
@@ -68,33 +70,37 @@
 
 <main>
 </div-->
-<div class="black">
+
+
+<div class="container">
+
+<% @posts.each do |post| %>
   <div class="third">
-      <% @posts.each do |post| %>
-      <div class="third_first">
+    <%= image_tag(post.image, class: "image") %>
+    <div class="heading">
       <%= post.title %>
-      <%= post.content %>
-      <%= post.user_id %>
-      <%= post.created_at %><br>
-      <footer><%= link_to "More &raquo", post_path(post) %></footer>
-
     </div>
-
+    <p>Créé le
+      <%= post.created_at.strftime("%d-%m-%Y à %H:%M") %><br>
+    </p>
+    <p>par <%= post.user.username %></p>
+    <p>
+      <%= post.content %>
+    </p>
+    <footer><%= link_to "Lire la suite", post_path(post), class:"btn " %></footer>
   </div>
+
   <% end %>
 
 </div>
-<br>
-<p class="heading">
 
-  </p>
-
-<p class="">
-</p>
-<p>
-</p>
+<!-- end of container in layout -->
 </div>
-
+<%= form_for :message do |form| %>
+  <%= form.cktext_area :notes, class: 'someclass', ckeditor: { language: 'uk'} %>
+  <%= form.cktext_area :content, value: 'Default value', id: 'sometext'%>
+  <%= cktext_area :page, :info, cols: 40, ckeditor: { uiColor: '#AADC6E', toolbar: 'mini' }%>
+<%end %>
 <!--li class="one_third">
 <article class="bgded overlay">
 <div class="txtwrap active"><i class="block fa fa-4x fa-joomla"></i>
@@ -386,7 +392,7 @@
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear">
     <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_left">Copyright &copy; - <%= Date.today.year %> - All Rights Reserved - <a href="#">Domain Name</a></p>
     <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
     <!-- ################################################################################################ -->
   </div>

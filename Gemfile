@@ -11,9 +11,13 @@ gem 'rails', '~> 5.2', '>= 5.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', git: 'https://github.com/larskanis/sqlite3-ruby', branch: 'add-gemspec'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Use Materialize for style
+gem 'materialize-sass', '~> 1.0.0'
+# Use Materilaize Icons
+gem 'material_icons'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -21,7 +25,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-script-source', '1.8.0'
- gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -36,8 +40,12 @@ gem 'bootstrap-sass', '~> 3.3.7'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-#font-awesome
-gem "font-awesome-rails"
+# Use CKEditor
+gem 'ckeditor'
+
+# Use Mail Form
+# Font-Awesome
+gem 'font-awesome-rails'
 # Use active storage to upload image
 gem 'activestorage'
 # Use Capistrano for deployment
